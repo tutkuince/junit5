@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FizzBuzzTest {
 
@@ -32,5 +33,10 @@ public class FizzBuzzTest {
     @Test
     void returnTheNumberItselfWhenTheNumberIsNotDividedAnyOfThreeOfFive() {
         assertEquals("7", fizzBuzz.stringFor(7));
+    }
+
+    @Test
+    void throwsIllegalArgumentExceptionWhenTheNumberIsLessThanOneOrGreaterThanHundred() {
+        assertThrows(IllegalArgumentException.class, () -> fizzBuzz.stringFor(-1));
     }
 }
