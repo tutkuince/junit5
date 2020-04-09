@@ -23,4 +23,9 @@ public class FizzBuzzTest {
     void returnBuzzWhenTheNumberIsDividedByFive() {
         assertEquals("Buzz", fizzBuzz.stringFor(5));
     }
+
+    @Test
+    void returnFizzBuzzWhenTheNumberIsDividedByBothOfThreeAndFive() {
+        assertEquals("FizzBuzz", fizzBuzz.stringFor(15));
+    }
 }
