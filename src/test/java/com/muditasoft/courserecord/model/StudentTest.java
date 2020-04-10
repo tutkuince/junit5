@@ -8,11 +8,11 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+@Tag("student")
 public class StudentTest {
 
     @Test
-    @DisplayName
-            ("Test every student must have an id, name and surname")
+    @DisplayName("Test every student must have an id, name and surname")
     @Tag("createStudent")
     void shouldCreateStudentWithIdNameAndSurname() {
 
@@ -142,7 +142,6 @@ public class StudentTest {
     @Test
     @DisplayName("Test student creation at only development machine")
     @Tag("createStudent")
-    @Disabled
     void shouldCreateStudentWithNameAndSurnameAtDevelopmentMachine() {
 
         assumeTrue(System.getProperty("ENV") != null, "Aborting Test: System property ENV doesn't exist!");
