@@ -1,14 +1,12 @@
 package com.muditasoft.courserecord.model;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class StudentTest {
 
@@ -139,6 +137,23 @@ public class StudentTest {
         assertTimeout(Duration.ofMillis(10), () -> student.addCourse(lecturerCourseRecord));
 
         assertTimeoutPreemptively(Duration.ofMillis(10), () -> student.addCourse(lecturerCourseRecord));
+    }
+
+    @Test
+    @DisplayName("Test student creation at only development machine")
+    @Tag("createStudent")
+    @Disabled
+    void shouldCreateStudentWithNameAndSurnameAtDevelopmentMachine() {
+
+        assumeTrue(System.getProperty("ENV") != null, "Aborting Test: System property ENV doesn't exist!");
+        assumeTrue(System.getProperty("ENV").equals("dev"), "Aborting Test: Not on a developer machine!");
+
+        final Student ahmet = new Student("1", "Ahmet", "Can");
+        assertAll("Student Information",
+                () -> assertEquals("Ahmet", ahmet.getName()),
+                () -> assertEquals("Can", ahmet.getSurname()),
+                () -> assertEquals("1", ahmet.getId())
+        );
     }
 
 }
