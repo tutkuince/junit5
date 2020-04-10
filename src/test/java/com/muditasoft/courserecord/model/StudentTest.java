@@ -2,6 +2,7 @@ package com.muditasoft.courserecord.model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
@@ -98,4 +99,15 @@ public class StudentTest {
     }
 
 
+    @Test
+    @DisplayName("Got an exception when add a null lecturer course record to student")
+    @Tags({@Tag("exceptional"), @Tag("addCourse")})
+    void throwsExceptionWhenAddToNullCourseToStudent() {
+
+        final Student ahmet = new Student("1", "Ahmet", "Can");
+        assertThrows(IllegalArgumentException.class, () -> ahmet.addCourse(null));
+        assertThrows(IllegalArgumentException.class, () -> ahmet.addCourse(null), "Throws IllegalArgumentException");
+        final IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> ahmet.addCourse(null));
+        assertEquals("Can't add course with null lecturer course record", illegalArgumentException.getMessage());
+    }
 }
