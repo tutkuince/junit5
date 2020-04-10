@@ -12,3 +12,10 @@
 **Then**; Obje'nin gelmesini beklediğimiz yeni durumunun kontrolü.
 
 **Clean**; Objenin gerekiyorsa test önce duruma getirilmesi.
+
+### Assumptions 
+- Bir var sayıma bağlı olarak testleri çalıştırmak
+- Test method veya Assertion'lar bazında
+- **assumeTrue(boolean, message)**
+- **assumeFalse(boolean, message)**
+- **assumingThat(boolean, Executable)**
