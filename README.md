@@ -19,3 +19,7 @@
 - **assumeTrue(boolean, message)**
 - **assumeFalse(boolean, message)**
 - **assumingThat(boolean, Executable)**
+
+### Tag'leme ve Filtreleme
+- @Tag
+- Hızlı, Yavaş, Regresyon, Integration vs.
