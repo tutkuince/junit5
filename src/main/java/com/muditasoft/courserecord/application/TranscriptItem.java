@@ -1,8 +1,9 @@
 package com.muditasoft.courserecord.application;
 
-import io.mucahit.course.unittest.courserecord.model.Course;
-import io.mucahit.course.unittest.courserecord.model.Semester;
-import io.mucahit.course.unittest.courserecord.model.StudentCourseRecord;
+
+import com.muditasoft.courserecord.model.Course;
+import com.muditasoft.courserecord.model.Semester;
+import com.muditasoft.courserecord.model.StudentCourseRecord;
 
 /**
  * @author mucahitkurt

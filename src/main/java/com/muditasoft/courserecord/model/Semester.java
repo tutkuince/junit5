@@ -2,7 +2,8 @@ package com.muditasoft.courserecord.model;
 
 import java.time.LocalDate;
 
-import static io.mucahit.course.unittest.courserecord.model.Semester.Term.*;
+import static com.muditasoft.courserecord.model.Semester.Term.*;
+
 
 /**
  * @author mucahitkurt

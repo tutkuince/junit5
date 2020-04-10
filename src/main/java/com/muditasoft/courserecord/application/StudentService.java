@@ -1,18 +1,16 @@
 package com.muditasoft.courserecord.application;
 
-import io.mucahit.course.unittest.courserecord.model.Course;
-import io.mucahit.course.unittest.courserecord.model.Semester;
-import io.mucahit.course.unittest.courserecord.model.Student;
-import io.mucahit.course.unittest.courserecord.model.StudentCourseRecord;
+
+import com.muditasoft.courserecord.model.Course;
+import com.muditasoft.courserecord.model.Semester;
+import com.muditasoft.courserecord.model.Student;
+import com.muditasoft.courserecord.model.StudentCourseRecord;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author mucahitkurt
- * @since 30.04.2018
- */
+
 public interface StudentService {
 
     void addCourse(String studentId, Course course);

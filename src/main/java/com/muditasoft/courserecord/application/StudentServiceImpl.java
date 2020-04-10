@@ -1,16 +1,12 @@
 package com.muditasoft.courserecord.application;
 
-import io.mucahit.course.unittest.courserecord.model.*;
+import com.muditasoft.courserecord.model.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/**
- * @author mucahitkurt
- * @since 30.04.2018
- */
 public class StudentServiceImpl implements StudentService {
 
     private final CourseService courseService;
