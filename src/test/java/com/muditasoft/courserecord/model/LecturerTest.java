@@ -36,5 +36,12 @@ class LecturerTest {
         assertEquals(1, lecturer.getLecturerCourseRecords().size());
     }
 
-    
+    @Test
+    @DisplayName("Lecturer course record has lecturer when added to lecturer")
+    void lecturerCourseRecordHasLecturerInfoWhenAddedToALecturer() {
+        final LecturerCourseRecord lecturerCourseRecord = lecturerCourseRecord();
+        lecturer.addLecturerCourseRecord(lecturerCourseRecord);
+
+        assertEquals(lecturer, lecturerCourseRecord.getLecturer());
+    }
 }
