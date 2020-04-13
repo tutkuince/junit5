@@ -1,5 +1,8 @@
 package com.muditasoft.courserecord.model;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LecturerTest {
@@ -12,4 +15,16 @@ class LecturerTest {
      *
      * */
 
+    @Test
+    @DisplayName("When a lecturer course record is added to lecturer then lecturer course record size increase")
+    void whenACourseIsAddedToLecturerThenLecturerCourseSizeIncrease() {
+        Lecturer lecturer = new Lecturer();
+        LecturerCourseRecord lecturerCourseRecord = new LecturerCourseRecord(new Course(), new Semester());
+
+        assertEquals(0, lecturer.getLecturerCourseRecords().size());
+        lecturer.addLecturerCourseRecord(lecturerCourseRecord);
+
+        assertEquals(1, lecturer.getLecturerCourseRecords().size());
+
+    }
 }
